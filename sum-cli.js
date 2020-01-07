@@ -20,14 +20,19 @@ const getCLI = function() {
 const sumWholeNumbers = function(inputArray) {
   let sum = 0;
   for (let num of inputArray) {
+    // convert num to a Number. For example command line arguments are strings
     num = Number(num);
-    if (num % 1 === 0) { // this means num is a number and Integer
+    if (num % 1 === 0) { // this means num is a number and an Integer
+    // Other ideas for doing the above check are:
+      // 1. if (isInteger(num)) { - this is very readable
+      // 2. if (Math.floor(num) === num) { - this feels hacky, but cewl ;) I will not do this.
       sum += num;
     }
   }
   return sum;
 };
 
+// Test for sumWholeNumbers
 // sumWholeNumbers([2, 4, 6, 10]) => 22
 
 
